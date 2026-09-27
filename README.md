@@ -31,7 +31,7 @@
 
 ---
 
-**ArgoCD Components**
+
 
 
 
@@ -69,3 +69,9 @@
 
 
 ![Gitops Workflow](images/gitops3.png)
+
+
+
+---
+
+
