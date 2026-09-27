@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: autoprune
+  namespace: argocd
+spec:
+  # Project defines which ArgoCD project this application belongs to
+  project: default
+
+  # Source defines where the application manifests are located
+  source:
+    repoURL: https://github.com/venkatamamidibathula/argocd-example-apps
+    targetRevision: HEAD
+    path: helm-guestbook
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
