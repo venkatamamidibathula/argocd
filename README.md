@@ -18,6 +18,19 @@
 
 ---
 
+
+**ArgoCD Architecture**
+
+
+- Understanding the role of API Server, Repository Server and Application Controller
+
+
+![Gitops Workflow](images/argocdarchitecture.png)
+
+
+
+---
+
 **ArgoCD Components**
 
 
