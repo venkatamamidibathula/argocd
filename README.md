@@ -25,7 +25,7 @@
 - Understanding the role of API Server, Repository Server and Application Controller
 
 
-![Gitops Workflow](images/argocdarchitecture.png)
+![Gitops Workflow](images/architecture.png)
 
 
 
