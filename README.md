@@ -134,6 +134,36 @@ spec:
 
 Sync phases are defined on application kubernetes manifests and not on argocd projects
 
+```yaml
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: {{ template "helm-guestbook.fullname" . }}-job
+  labels:
+    app: {{ template "helm-guestbook.name" . }}
+    chart: {{ template "helm-guestbook.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+  annotations:
+    argocd.argoproj.io/hook: PreSync
+    argocd.argoproj.io/hook-delete-policy: BeforeHookCreation,HookSucceeded 
+spec:
+  template:
+    metadata:
+      name: {{ template "helm-guestbook.fullname" . }}-job
+      labels:
+        app: {{ template "helm-guestbook.name" . }}
+        release: {{ .Release.Name }}
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}-job
+          image: busybox:1.28
+          imagePullPolicy: IfNotPresent
+          command: ['sh', '-c', 'echo Hello Kubernetes! && sleep 30']
+      restartPolicy: Never
+```
+
+
 ---
 
 **Sync Waves**
@@ -145,7 +175,8 @@ Defines the execution of kubernetes manifests on cluster. The sync wave annotati
 
 Syncwaves and Syncphases can be combined where in which within each sync phase there can be sync waves defined.
 
-These are defined in application kubernetes manifests and not on argocd projects
+These are defined in application kubernetes manifests and not on argocd projects. It is always better to use multiples of 10 than going for 1,2,3,....etc.
+
 
 ---
 
