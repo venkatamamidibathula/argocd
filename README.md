@@ -132,15 +132,20 @@ spec:
 
 ![Gitops Workflow](images/syncphases.png)
 
+Sync phases are defined on application kubernetes manifests and not on argocd projects
 
 ---
 
 **Sync Waves**
 
+Defines the execution of kubernetes manifests on cluster. The sync wave annotation with least value executes first followed by subsequent higher numbers in ascending order.
 
-![Gitops Workflow](images/gitops3.png)
 
+![Gitops Workflow](images/syncwaves.png)
 
+Syncwaves and Syncphases can be combined where in which within each sync phase there can be sync waves defined.
+
+These are defined in application kubernetes manifests and not on argocd projects
 
 ---
 
