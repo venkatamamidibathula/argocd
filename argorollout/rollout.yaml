@@ -1,0 +1,32 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  name: simple-color-app-rollout
+spec:
+  strategy:
+    canary:
+      steps:
+        - setWeight: 20
+        - pause: {}
+        - setWeight: 40
+        - pause: {}
+        - setWeight: 60
+        - pause: {}
+        - setWeight: 80
+        - pause: {}
+        - setWeight: 100
+  replicas: 5
+  selector:
+    matchLabels:
+      app: simple-color-app
+  template:
+    metadata:
+      labels:
+        app: simple-color-app
+    spec:
+      containers:
+        - name: simple-color-app
+          image: lmacademy/simple-color-app:1.0.0
+          env:
+            - name: COLOR
+              value: "blue"
