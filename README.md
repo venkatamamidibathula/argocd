@@ -197,5 +197,6 @@ The downside of blue green is you have to spin up a new green environment which 
 Remember the word "Canary in a coal mine"
 
 
+![Canary](images/canarydeployments.png)
 
 
