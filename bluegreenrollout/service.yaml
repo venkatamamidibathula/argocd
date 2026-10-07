@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: rollout-bluegreen-active
+  namespace: bluegreen-lab
+spec:
+  selector:
+    app: rollout-bluegreen
+  type: NodePort
+  ports:
+    - protocol: TCP
+      port: 3000
+      name: http
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: rollout-bluegreen-preview
+  namespace: bluegreen-lab
+spec:
+  selector:
+    app: rollout-bluegreen
+  type: NodePort
+  ports:
+    - protocol: TCP
+      port: 3000
+      name: http

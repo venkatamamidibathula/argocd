@@ -182,7 +182,20 @@ These are defined in application kubernetes manifests and not on argocd projects
 
 **Deployment**
 
+**Blue Green**
 A stable running blue deployment needs to be updated to target green deployments.
 
 
 ![BlueGreenDeployment](images/bluegreen.png)
+
+
+The downside of blue green is you have to spin up a new green environment which strains the underlying resouces like memory and compute and adds cost
+
+
+**Canary Deployment**
+
+Remember the word "Canary in a coal mine"
+
+
+
+
