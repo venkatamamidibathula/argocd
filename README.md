@@ -185,4 +185,4 @@ These are defined in application kubernetes manifests and not on argocd projects
 A stable running blue deployment needs to be updated to target green deployments.
 
 
-![BlueGreenDeployment](!images/bluegreen.png)
+![BlueGreenDeployment](images/bluegreen.png)
