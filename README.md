@@ -199,4 +199,9 @@ Remember the word "Canary in a coal mine"
 
 ![Canary](images/canarydeployments.png)
 
+---
 
+**Limitations of replica weighted traffic**
+
+
+![Canary](images/replicaweightedlimitations.png)
