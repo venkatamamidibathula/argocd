@@ -205,3 +205,11 @@ Remember the word "Canary in a coal mine"
 
 
 ![Canary](images/replicaweightedlimitations.png)
+
+---
+
+**Automated Canary Deployment **
+
+
+
+![Canary](images/automatedcanary.png)

@@ -1,0 +1,7 @@
+server:
+  global:
+    scrape_interval: 15s
+    evaluation_interval: 15s
+  service:
+    type: NodePort
+    port: 30090
